@@ -1,0 +1,32 @@
+{
+  "name": "shopify-gitkit",
+  "version": "0.0.11",
+  "description": "Global CLI for fusing Shopify + Git development workflows",
+  "main": "command.js",
+  "bin": {
+    "gitkit": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/responsival/gitkit.git"
+  },
+  "keywords": [
+    "shopify",
+    "liquid",
+    "themekit",
+    "git"
+  ],
+  "author": "Nikush Dalia (Responsival)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/responsival/gitkit/issues"
+  },
+  "homepage": "https://github.com/responsival/gitkit#readme",
+  "dependencies": {
+    "execa": "^4.1.0",
+    "node-color-log": "^5.2.0"
+  }
+}
