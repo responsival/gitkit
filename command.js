@@ -45,25 +45,33 @@ async function startGitKit() {
  * If not, determine ask if they want to run a diff
  * If any applicable command is run with --safe then this is will be run prior to that command running
  */
-async function runCheck() {
+async function checkGit() {
 	const {stdout} = await execa('git', ['status']);
-	console.log(stdout);
-	console.log('--');
-	(await execa('git', ['status'])).stdout.pipe(process.stdout);
-
+	return stdout.includes('working tree clean');
 }
+
+async function runCheck() {
+	const isWorkingTreeClean = await checkGit();
+	isWorkingTreeClean ? logger.info(`✅ Git working tree`) : logger.error(`Git working tree is not clean.`)
+}
+
+
 function startConfigure() {
 
 }
+
 function startHelp() {
 
 }
+
 function startPull() {
 
 }
+
 function startPush() {
 
 }
+
 function startWatch() {
 
 }
